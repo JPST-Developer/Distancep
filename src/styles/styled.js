@@ -1,13 +1,34 @@
-import styled from "styled-components"
+import styled, {  createGlobalStyle } from "styled-components"
 import worldMap from "../assets/svg/worldMap.png"
+
+export const GlobalStyle = createGlobalStyle`
+    body{ 
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+`
 
 export const Wrapper = styled.section`
     background-color: grey;
-    background-image: url(${worldMap}); 
 `
 
 export const Header = styled.div`
+    height: 50vh;
+    background-image: url(${worldMap}); 
+    background-color: #334356;
+    text-align: center;
+    
+`
 
+export const Title = styled.h1`
+    font-family: 'Koulen', cursive;
+    font-size: 60px;
+    color: #213448;
+    span {
+        color: #6C7C8D;
+        font-family: 'Prosto One', cursive;
+        }
 `
 
 export const InputCep = styled.input`
@@ -16,7 +37,6 @@ export const InputCep = styled.input`
     text-align: center;
     border-radius: 10px;
     border: none;
-    margin: 50px 0 10px 30%;
 `
 
 export const Button = styled.button`

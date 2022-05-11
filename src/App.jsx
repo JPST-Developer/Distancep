@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import api from './services/api';
 
-import { Wrapper, InputCep, Button } from "./styles/styled"
+import { GlobalStyle, Wrapper, InputCep, Button, Title, Header } from "./styles/styled"
  
 function App() {
 
@@ -22,9 +22,16 @@ function App() {
 
   return (
     <Wrapper className="App">
-      <InputCep onChange={handleChange} type="text"  placeholder='Digite o CEP' />
-      <Button onClick={handleClick} type="submit">Buscar CEP</Button>
-      <pre>{ JSON.stringify(dataApi, null, 2) }</pre>
+    <GlobalStyle />
+
+      <Header>
+
+        <Title>DISTAN<span>CEP</span></Title>
+        <InputCep onChange={handleChange} type="text"  placeholder='Digite o CEP' />
+        <Button onClick={handleClick} type="submit">Buscar CEP</Button>
+
+      </Header>
+      
 
       <p>Cep: <input type="text" disabled value={dataApi?.cep} /> </p>
       <p>Rua: <input type="text" disabled value={dataApi?.logradouro} /> </p>

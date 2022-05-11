@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import './App.css';
 import api from './services/api';
 
+import { Wrapper, InputCep, Button } from "./styles/styled"
+ 
 function App() {
 
   const [ dataApi, setDataApi ] = useState()
@@ -20,9 +21,9 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <input onChange={handleChange} type="text"  placeholder='CEP' />
-      <button onClick={handleClick} type="submit">Enviar</button>
+    <Wrapper className="App">
+      <InputCep onChange={handleChange} type="text"  placeholder='Digite o CEP' />
+      <Button onClick={handleClick} type="submit">Buscar CEP</Button>
       <pre>{ JSON.stringify(dataApi, null, 2) }</pre>
 
       <p>Cep: <input type="text" disabled value={dataApi?.cep} /> </p>
@@ -32,7 +33,7 @@ function App() {
       <p>Estado: <input type="text" disabled value={dataApi?.uf} /> </p>
       <p>DDD: <input type="text" disabled value={dataApi?.ddd} /> </p>
 
-    </div>
+    </Wrapper>
   );
 }
 
